@@ -65,3 +65,6 @@ nixos-rebuild switch --flake .#nixos --use-remote-sudo
 $ uname -a
 Linux nixos 6.7.7 #1-NixOS SMP PREEMPT_DYNAMIC Fri Mar  1 12:42:00 UTC 2024 x86_64 GNU/Linux
 ```
+
+At first I started thinking about this idea in order to migrate my dev environment into NixOS, but since I know nothing about Nix either, no idea what to do next.
+I'll go ahead and acclimatize Nix as a package manager in both my current linux setup and MacOS, so that I can appreciate the benefits of NixOS...
