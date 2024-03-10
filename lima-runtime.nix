@@ -101,7 +101,6 @@ in {
 
     environment.systemPackages = with pkgs; [
         bash
-        zsh
         sshfs
         fuse3
     ];
@@ -116,7 +115,7 @@ in {
         uid = LIMA_CIDATA_UID;
         home = "/home/${LIMA_CIDATA_USER}.linux";
         group = "users";
-        shell = pkgs.zsh;
+        shell = "/bin/bash";
         isSystemUser = true;
         extraGroups = [ "wheel" ];
         createHome = true;
