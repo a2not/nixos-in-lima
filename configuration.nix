@@ -5,6 +5,8 @@
       ./lima-init.nix
   ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
 # ssh
   services.openssh.enable = true;
   services.openssh.settings.PermitRootLogin = "yes";
