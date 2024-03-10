@@ -5,6 +5,8 @@ Also, shout-out to kasuboski for the informative blog post, [NixOS Dev Environme
 
 # nixos-in-lima
 
+[![build nixos image](https://github.com/a2not/nixos-in-lima/actions/workflows/build_img.yaml/badge.svg)](https://github.com/a2not/nixos-in-lima/actions/workflows/build_img.yaml)
+
 ## Generating the image
 
 First we need to generate NixOS image, which requires a linux machine so here we'll use default (ubuntu) lima VM.
