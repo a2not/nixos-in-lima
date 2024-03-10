@@ -15,3 +15,4 @@ jobs:
           system-features = nixos-test benchmark big-parallel kvm
           experimental-features = nix-command flakes
     - run: nix build .#packages.x86_64-linux.img
+    - run: du -sh result/nixos.img
