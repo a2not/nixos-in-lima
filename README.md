@@ -33,10 +33,10 @@ limactl stop nixos-builder && limactl start nixos-builder && limactl shell nixos
 
 # setup nix environment
 ## would be unable to create symlink in this repo location since it is readonly file system from lima vm's standpoint
-## so copy repo into the home dir first
-mkdir ~/nixos/
-cp {{ path/to/this/repo }}/* ~/nixos/
-cd ~/nixos/
+## so clone repo to the home dir first
+cd
+git clone https://github.com/a2not/nixos-in-lima.git
+cd nixos-in-lima/
 
 nix build .#packages.x86_64-linux.img
 cp $(readlink result)/nixos.img /tmp/lima/nixos-x86_64.img
