@@ -23,6 +23,6 @@ jobs:
     - name: archive built-image artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: nixos-${{ matric.arch }}-lima-img
+        name: nixos-${{ matrix.arch }}-lima-img
         path: |
           nixos-${{ matrix.arch }}.img
