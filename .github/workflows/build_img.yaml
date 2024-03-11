@@ -23,7 +23,7 @@ jobs:
 
     - run: nix build .#packages.${{ matrix.arch }}-linux.img
     - run: du -sh result/nixos.img
-    - run: mv result/nixos.img nixos-${{ matrix.arch }}.img
+    - run: sudo mv result/nixos.img nixos-${{ matrix.arch }}.img
     - name: archive built-image artifacts
       uses: actions/upload-artifact@v4
       with:
