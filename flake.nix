@@ -24,6 +24,7 @@
     };
     packages.aarch64-linux = {
       img = nixos-generators.nixosGenerate {
+        system = "aarch64-linux";
         pkgs = nixpkgs.legacyPackages.aarch64-linux;
         modules = [
           ./nixos/configuration.nix

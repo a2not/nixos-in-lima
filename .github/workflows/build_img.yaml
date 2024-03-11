@@ -6,6 +6,9 @@ on:
 jobs:
   build-img:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [x86_64, aarch64]
     steps:
     - uses: actions/checkout@v4
     - uses: cachix/install-nix-action@v26
@@ -14,5 +17,12 @@ jobs:
         extra_nix_config: |-
           system-features = nixos-test benchmark big-parallel kvm
           experimental-features = nix-command flakes
-    - run: nix build .#packages.x86_64-linux.img
+    - run: nix build .#packages.${{ matrix.arch }}-linux.img
     - run: du -sh result/nixos.img
+    - run: mv result/nixos.img nixos-${{ matrix.arch }}.img
+    - name: archive built-image artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: nixos-${{ matric.arch }}-lima-img
+        path: |
+          nixos-${{ matrix.arch }}.img
