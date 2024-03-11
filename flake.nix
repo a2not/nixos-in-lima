@@ -6,13 +6,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, nixos-generators, ... }: {
+  outputs = {
+    self,
+    nixpkgs,
+    nixos-generators,
+    ...
+  }: {
     packages.x86_64-linux = {
       img = nixos-generators.nixosGenerate {
         system = "x86_64-linux";
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [
-          ./configuration.nix
+          ./nixos/configuration.nix
         ];
         format = "raw-efi";
       };
@@ -21,7 +26,7 @@
       img = nixos-generators.nixosGenerate {
         pkgs = nixpkgs.legacyPackages.aarch64-linux;
         modules = [
-          ./configuration.nix
+          ./nixos/configuration.nix
         ];
         format = "raw-efi";
       };
