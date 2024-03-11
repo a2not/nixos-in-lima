@@ -17,6 +17,8 @@ jobs:
         extra_nix_config: |-
           system-features = nixos-test benchmark big-parallel kvm
           experimental-features = nix-command flakes
+    - run: ls -lah ~/
+    - run: sudo ls -lah /etc/nix/
     - run: nix build .#packages.${{ matrix.arch }}-linux.img
     - run: du -sh result/nixos.img
     - run: mv result/nixos.img nixos-${{ matrix.arch }}.img
