@@ -20,6 +20,7 @@ jobs:
         extra_nix_config: |-
           system-features = nixos-test benchmark big-parallel kvm
           experimental-features = nix-command flakes
+    - uses: DeterminateSystems/magic-nix-cache-action@main
 
     - run: nix build .#packages.${{ matrix.arch }}-linux.img
     - run: du -sh result/nixos.img
