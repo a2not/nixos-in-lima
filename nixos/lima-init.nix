@@ -1,8 +1,6 @@
 {
   config,
-  modulesPath,
   pkgs,
-  lib,
   ...
 }: let
   LIMA_CIDATA_MNT = "/mnt/lima-cidata";

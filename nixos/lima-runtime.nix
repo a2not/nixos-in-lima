@@ -1,6 +1,4 @@
 {
-  config,
-  modulesPath,
   pkgs,
   lib,
   ...

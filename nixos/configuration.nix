@@ -1,5 +1,4 @@
 {
-  config,
   modulesPath,
   pkgs,
   lib,
@@ -37,6 +36,10 @@
     fsType = "ext4";
     options = ["noatime" "nodiratime" "discard"];
   };
+
+  environment.systemPackages = with pkgs; [
+    git
+  ];
 
   # misc
   boot.kernelPackages = pkgs.linuxPackages_latest;
